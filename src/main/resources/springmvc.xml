@@ -1,0 +1,17 @@
+<beans>
+    <!-- Handler处理器类的配置 -->
+    <!-- 通过bean标签，建立beanname和bean的映射关系 -->
+    <bean name="/add2"
+          class="com.mrchen.myspring.mvc.handler.AddUserHandler"></bean>
+    <bean name="/get2"
+          class="com.mrchen.myspring.mvc.handler.GetUserHandler"></bean>
+
+
+    <bean class="com.mrchen.myspring.mvc.controller.UserController"></bean>
+
+   <!--系统的标签-->
+    <bean class="com.mrchen.myspring.mvc.handlermapping.BeanNameUrlHandlerMapping" init-method="init"></bean>
+    <bean class="com.mrchen.myspring.mvc.handlermapping.RequestMappingHandlerMapping" init-method="init"></bean>
+    <bean class="com.mrchen.myspring.mvc.handleradapter.HttpRequestHandlerAdapter"></bean>
+    <bean class="com.mrchen.myspring.mvc.handleradapter.RequestMappingHandlerAdapter"></bean>
+</beans>
